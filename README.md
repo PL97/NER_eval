@@ -1,8 +1,7 @@
 ## NER_eval
+A simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
 
-An simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
-
-This script currently only supports IOB2 format with both strict and lenient mode.
+This script currently only supports the IOB2 format with both strict and lenient modes.
 
 
 ## Usage
@@ -24,8 +23,6 @@ tag(strict): PER         precision:0.5   recall:0.5      f1-score:0.5
 tag(lenient): ORG        precision:1.0   recall:1.0      f1-score:1.0
 tag(strict): ORG         precision:0.5   recall:0.5      f1-score:0.5
 ```
-
-*results is also saved in evaluation.json*
 
 ## How to cite this work
 
