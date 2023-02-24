@@ -29,7 +29,7 @@ tag(strict): ORG         precision:0.5   recall:0.5      f1-score:0.5
 
 ## How to cite this work
 
-If you find this gitr epo useful, please consider citing it using the snippet below:
+If you find this git repo useful, please consider citing it using the snippet below:
 ```bibtex
 @misc{ner_eval,
     author={Le Peng},
