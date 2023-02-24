@@ -9,9 +9,7 @@ setup(
     author_email='peng0347@umn.edu',
     license='MIT',
     packages=['nereval'],
-    install_requires=['re',
-                      'numpy',                     
-                      'collections'
+    install_requires=['numpy',
                       ],
 
     classifiers=[

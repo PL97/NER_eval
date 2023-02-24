@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: nereval
+Version: 0.1.0
+Summary: A simple Python snippets for NER evaluation
+Home-page: https://github.com/PL97/NER_eval
+Author: Le Peng
+Author-email: peng0347@umn.edu
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.8
+License-File: LICENSE
+
+UNKNOWN
+
