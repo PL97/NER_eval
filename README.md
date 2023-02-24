@@ -34,6 +34,6 @@ If you find this gitr epo useful, please consider citing it using the snippet be
 @misc{ner_eval,
     author={Le Peng},
     title={ner_eval: A Simple Python Snippets for NER Evaluation},
-    howpublished={\url{https://github.com/PL97/federated-multi-modality-learning}},
+    howpublished={\url{https://github.com/PL97/NER_eval}},
     year={2022}
 }
