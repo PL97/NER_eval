@@ -1,0 +1,9 @@
+vars,F1,fci_0.05,fci_0.1,gold_num,micro,microci_0.05,microci_0.1,macro,macroci_0.05,macroci_0.1
+B-stage-value,0.9574468085106383,"(nan, nan)","(nan, nan)",46,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-grade-value,0.8809523809523809,"(nan, nan)","(nan, nan)",40,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-receptor,0.9936305732484078,"(nan, nan)","(nan, nan)",78,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-htype-value,0.95,"(nan, nan)","(nan, nan)",142,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-size-value,0.8656716417910447,"(nan, nan)","(nan, nan)",65,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-laterality-value,0.9606299212598425,"(nan, nan)","(nan, nan)",371,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-receptor-status,0.935064935064935,"(nan, nan)","(nan, nan)",38,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
+B-site-value,0.6966292134831461,"(nan, nan)","(nan, nan)",46,0.9345322058104989,"(nan, nan)","(nan, nan)",0.9050031842887996,"(nan, nan)","(nan, nan)"
