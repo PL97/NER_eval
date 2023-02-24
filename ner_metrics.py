@@ -60,7 +60,7 @@ def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> di
             metrics[ue][f'{mm}_precision'] = matched[ue][mm]/predict[ue] if predict[ue] > 0 else 0
             metrics[ue][f'{mm}_recall'] = matched[ue][mm]/truth[ue]
             metrics[ue][f'{mm}_f1-score'] = (2*metrics[ue][f'{mm}_precision']*metrics[ue][f'{mm}_recall'])/(metrics[ue][f'{mm}_precision']+metrics[ue][f'{mm}_recall']) if (metrics[ue][f'{mm}_precision']+metrics[ue][f'{mm}_recall'] > 0) else 0
-            print(f"tag: {ue} \t precision:{metrics[ue][f'{mm}_precision']} \t recall:{metrics[ue][f'{mm}_recall']} \t f1-score:{metrics[ue][f'{mm}_f1-score']}")
+            print(f"tag({mm}): {ue} \t precision:{metrics[ue][f'{mm}_precision']} \t recall:{metrics[ue][f'{mm}_recall']} \t f1-score:{metrics[ue][f'{mm}_f1-score']}")
     return metrics
         
             
@@ -69,17 +69,24 @@ def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> di
 
 if __name__ == "__main__":
     
-    predict, truth = [], []
-    with open(r"label_test2.txt",'r') as f:
-        for line in f.readlines():
-            line = re.sub("\n", "", line).split("\t")
-            predict.append(line[2])
-            truth.append(line[1])
     
-    metrics = classifcation_report(truth, predict)
-    import json
-    with open('evaluation.json', 'w') as f:
-        json.dump(metrics, f)
-    # ctrl + shift + I for better display on vscode
+    test_from_file = False
+    if test_from_file:
+        y_pred, y_true = [], []
+        with open(r"label_test2.txt",'r') as f:
+            for line in f.readlines():
+                line = re.sub("\n", "", line).split("\t")
+                predict.append(line[2])
+                truth.append(line[1])
+        
+        metrics = classifcation_report(y_true, y_pred)
+        import json
+        with open('evaluation.json', 'w') as f:
+            json.dump(metrics, f)
+        # ctrl + shift + I for better display on vscode
+    else:
+        y_true = ['B-PER', 'I-PER', 'O', 'B-ORG', 'B-ORG', 'O', 'O', 'B-PER', 'I-PER', 'O']
+        y_pred = ['O', 'B-PER', 'O', 'B-ORG', 'B-ORG', 'I-ORG', 'O', 'B-PER', 'I-PER', 'O']
+        metrics = classifcation_report(y_true, y_pred)
     
     
