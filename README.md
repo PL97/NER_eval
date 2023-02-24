@@ -1,6 +1,6 @@
 ## NER_eval
 
-An simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) within 60 lines!
+An simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
 
 This script currently only supports IOB2 format with both strict and lenient mode.
 
