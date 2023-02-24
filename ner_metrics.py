@@ -4,20 +4,20 @@ from collections import defaultdict
 
 TNE = "this_tag_does_not_exists"
 
-def match(tags_true: list, tags_pred: list, mode="linient") -> dict:
-    """caculate linient matching score, including F1-score, precision, and recall
+def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> dict:
+    """caculate lenient matching score, including F1-score, precision, and recall
 
     Args:
         tags_true (list): true tags
         tags_pred (list): predicted tags
-        mode (str, optional): matching model, strict or linient. Defaults to "linient".
+        mode (str, optional): matching model, strict or lenient. Defaults to "lenient".
 
     Returns:
         dict: return metrics as a dict
     """    
     predict, truth, matched = defaultdict(lambda: 0.), defaultdict(lambda: 0.), defaultdict(lambda: defaultdict(lambda: 0.))
     
-    cur_mactching_tag = TNE  # auxiliary variable for linient matching
+    cur_mactching_tag = TNE  # auxiliary variable for lenient matching
     start_matching = TNE # auxiliary variable for strict matching
     for t, p in zip(tags_true, tags_pred):
         ## get the total ground truth number, will be used for recall calculation
@@ -33,9 +33,9 @@ def match(tags_true: list, tags_pred: list, mode="linient") -> dict:
         if re.match("^B-", p):
             predict[re.sub("B-", "", p)] += 1
             
-        ## get the true positives (linient)
+        ## get the true positives (lenient)
         if cur_mactching_tag in p:
-            matched[re.sub("(B-)|(I-)", "", p)]['linient'] += 1
+            matched[re.sub("(B-)|(I-)", "", p)]['lenient'] += 1
             cur_mactching_tag = TNE #! skip to next one
             
         ## get the true positives (strict)
@@ -56,7 +56,7 @@ def match(tags_true: list, tags_pred: list, mode="linient") -> dict:
     
     metrics = defaultdict(lambda: defaultdict(lambda: 0))
     for ue in unique_entities:
-        for mm in ["linient", "strict"]:
+        for mm in ["lenient", "strict"]:
             metrics[ue][f'{mm}_precision'] = matched[ue][mm]/predict[ue] if predict[ue] > 0 else 0
             metrics[ue][f'{mm}_recall'] = matched[ue][mm]/truth[ue]
             metrics[ue][f'{mm}_f1-score'] = (2*metrics[ue][f'{mm}_precision']*metrics[ue][f'{mm}_recall'])/(metrics[ue][f'{mm}_precision']+metrics[ue][f'{mm}_recall']) if (metrics[ue][f'{mm}_precision']+metrics[ue][f'{mm}_recall'] > 0) else 0
@@ -76,7 +76,7 @@ if __name__ == "__main__":
             predict.append(line[2])
             truth.append(line[1])
     
-    metrics = match(truth, predict)
+    metrics = classifcation_report(truth, predict)
     import json
     with open('evaluation.json', 'w') as f:
         json.dump(metrics, f)
