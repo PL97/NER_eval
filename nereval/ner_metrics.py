@@ -70,7 +70,7 @@ def classifcation_report(tags_true: list, tags_pred: list, mode="lenient", schem
     metrics = defaultdict(lambda: defaultdict(lambda: 0))
     for ue in unique_entities:
         metrics[ue][f'precision'] = matched[ue]/predict[ue] if predict[ue] > 0 else 0
-        metrics[ue][f'recall'] = matched[ue]/truth[ue]
+        metrics[ue][f'recall'] = matched[ue]/truth[ue] if truth[ue] > 0 else 0
         metrics[ue][f'f1-score'] = (2*metrics[ue]['precision']*metrics[ue]['recall'])/(metrics[ue]['precision']+metrics[ue]['recall']) if (metrics[ue]['precision']+metrics[ue]['recall'] > 0) else 0
         print(f"tag: {ue} \t precision:{metrics[ue]['precision']} \t recall:{metrics[ue]['recall']} \t f1-score:{metrics[ue]['f1-score']}")
     return metrics
