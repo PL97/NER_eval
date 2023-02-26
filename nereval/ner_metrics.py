@@ -4,17 +4,25 @@ from collections import defaultdict
 
 TNE = "this_tag_does_not_exists"
 
-def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> dict:
+def classifcation_report(tags_true: list, tags_pred: list, mode="lenient", scheme="IOB2") -> dict:
     """caculate lenient matching score, including F1-score, precision, and recall
 
     Args:
         tags_true (list): true tags
         tags_pred (list): predicted tags
         mode (str, optional): matching model, strict or lenient. Defaults to "lenient".
+        scheme (str, optional): annotation scheme, currently only support IOB2
 
     Returns:
         dict: return metrics as a dict
     """    
+    tags_true = [r+"-default" for r in tags_true if r in ['B', 'I']]
+    tags_pred = [r+"-default" for r in tags_pred if r in ['B', 'I']]
+    print(tags_true)
+    print(tags_pred)
+    
+    assert scheme in ['IOB2'] # sanity check
+    
     predict, truth, matched = defaultdict(lambda: 0.), defaultdict(lambda: 0.), defaultdict(lambda: 0.)
     
     cur_mactching_tag = TNE  # auxiliary variable for lenient matching
@@ -30,8 +38,8 @@ def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> di
             cur_mactching_tag = TNE 
             
         ## get the total prediction number, will be used for precision calculation
-        if re.match("^B-", p):
-            predict[re.sub("B-", "", p)] += 1
+        if re.match("^(B-)", p):
+            predict[re.sub("(B-)", "", p)] += 1
         
         if mode == "lenient":
             ## get the true positives (lenient)
@@ -53,6 +61,8 @@ def classifcation_report(tags_true: list, tags_pred: list, mode="lenient") -> di
                 start_matching = TNE
         else:
             exit("only support strict or lenient mode, please check your input argument")
+    matched[start_matching] = matched[start_matching]+1 if start_matching != TNE and mode == "strict" else matched[start_matching]
+        
             
     ## calucalte metrics: precision, recall, F1-score
     unique_entities = [re.sub("B-", "", x) for x in set(tags_true) if re.match("^B-", x)]
