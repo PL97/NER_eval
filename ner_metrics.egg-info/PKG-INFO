@@ -1,3 +1,14 @@
+Metadata-Version: 2.1
+Name: ner-metrics
+Version: 0.1.1
+Summary: A simple Python snippets for NER evaluation
+Home-page: https://github.com/PL97/NER_eval
+Author: Le Peng
+Author-email: peng0347@umn.edu
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 ## NER_eval
 A simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
 

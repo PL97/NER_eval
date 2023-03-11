@@ -1,0 +1,12 @@
+{
+    "ORG": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1-score": 0.5
+    },
+    "PER": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1-score": 0.5
+    }
+}

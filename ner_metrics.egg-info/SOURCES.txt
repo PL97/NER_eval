@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+ner_metrics/__init__.py
+ner_metrics/ner_metrics.py
+ner_metrics.egg-info/PKG-INFO
+ner_metrics.egg-info/SOURCES.txt
+ner_metrics.egg-info/dependency_links.txt
+ner_metrics.egg-info/requires.txt
+ner_metrics.egg-info/top_level.txt

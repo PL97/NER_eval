@@ -1,27 +1,23 @@
 from setuptools import setup
+# https://towardsdatascience.com/create-your-own-python-package-and-publish-it-into-pypi-9306a29bc116
+
+
+# read the contents of your README file
+from pathlib import Path
+this_directory = Path(__file__).parent
+print(this_directory)
+long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name='nereval',
-    version='0.1.0',    
+    name='ner_metrics',
+    version='0.1.1',    
     description='A simple Python snippets for NER evaluation',
     url='https://github.com/PL97/NER_eval',
     author='Le Peng',
     author_email='peng0347@umn.edu',
     license='MIT',
-    packages=['nereval'],
-    install_requires=['numpy',
-                      ],
-
-    classifiers=[
-        'Development Status :: 1 - Planning',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: MIT',  
-        'Operating System :: POSIX :: Linux',        
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.8',
-    ],
+    packages=['ner_metrics'],
+    install_requires=['numpy'],
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )

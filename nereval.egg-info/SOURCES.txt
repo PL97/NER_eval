@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-nereval/ner_metrics.py
-nereval.egg-info/PKG-INFO
-nereval.egg-info/SOURCES.txt
-nereval.egg-info/dependency_links.txt
-nereval.egg-info/requires.txt
-nereval.egg-info/top_level.txt
