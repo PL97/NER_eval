@@ -14,7 +14,7 @@ pip install ner_metrics
 ```python
 from ner_metrics import classication_report
 
-y_true = [['B-PER', 'I-PER', 'O', 'B-ORG', 'B-ORG', 'O', 'O', 'B-PER', 'I-PER', 'O']]
+y_true = ['B-PER', 'I-PER', 'O', 'B-ORG', 'B-ORG', 'O', 'O', 'B-PER', 'I-PER', 'O']
 y_pred = ['O', 'B-PER', 'O', 'B-ORG', 'B-ORG', 'I-ORG', 'O', 'B-PER', 'I-PER', 'O']
 classifcation_report(tags_true=y_true, tags_pred=y_pred, mode="lenient") # for lenient match
 
