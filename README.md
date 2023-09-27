@@ -1,3 +1,10 @@
+![GitHub](https://img.shields.io/github/license/PL97/NER_EVAL)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/ner-metrics)
+![PyPI - Version](https://img.shields.io/pypi/v/ner-metrics)
+
+
+
+
 ## NER_eval
 A simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
 
