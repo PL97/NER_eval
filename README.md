@@ -7,6 +7,10 @@ This script currently only supports the IOB2 format with both strict and lenient
 ```bash
 pip install ner_metrics
 ```
+or
+```bash
+pip install git+https://github.com/PL97/NER_eval.git
+```
 
 
 ## Usage
