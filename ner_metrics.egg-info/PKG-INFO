@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ner-metrics
-Version: 0.1.1
+Version: 0.1.2
 Summary: A simple Python snippets for NER evaluation
 Home-page: https://github.com/PL97/NER_eval
 Author: Le Peng
@@ -8,6 +8,7 @@ Author-email: peng0347@umn.edu
 License: MIT
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: numpy
 
 ## NER_eval
 A simple implementation of strict/lenient matching to evaluate NER performance (precision, recall, F1-score) in 60 lines!
@@ -18,18 +19,22 @@ This script currently only supports the IOB2 format with both strict and lenient
 ```bash
 pip install ner_metrics
 ```
+or
+```bash
+pip install git+https://github.com/PL97/NER_eval.git
+```
 
 
 ## Usage
 
 ```python
-from ner_metrics import classication_report
+from ner_metrics import classification_report
 
-y_true = [['B-PER', 'I-PER', 'O', 'B-ORG', 'B-ORG', 'O', 'O', 'B-PER', 'I-PER', 'O']]
+y_true = ['B-PER', 'I-PER', 'O', 'B-ORG', 'B-ORG', 'O', 'O', 'B-PER', 'I-PER', 'O']
 y_pred = ['O', 'B-PER', 'O', 'B-ORG', 'B-ORG', 'I-ORG', 'O', 'B-PER', 'I-PER', 'O']
-classifcation_report(tags_true=y_true, tags_pred=y_pred, mode="lenient") # for lenient match
+classification_report(tags_true=y_true, tags_pred=y_pred, mode="lenient") # for lenient match
 
-classifcation_report(tags_true=y_true, tags_pred=y_pred, mode="strict") # for strict match
+classification_report(tags_true=y_true, tags_pred=y_pred, mode="strict") # for strict match
 
 ```
 Expected output

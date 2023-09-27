@@ -10,7 +10,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='ner_metrics',
-    version='0.1.1',    
+    version='0.1.2',    
     description='A simple Python snippets for NER evaluation',
     url='https://github.com/PL97/NER_eval',
     author='Le Peng',
