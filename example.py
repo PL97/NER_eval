@@ -1,4 +1,4 @@
-from ner_metrics.ner_metrics import classifcation_report
+from ner_metrics.ner_metrics import classification_report
 
 
 if __name__ == "__main__":
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     
     ## output as a json file
     # metrics = classifcation_report(y_true, y_pred, mode='lenient')
-    metrics = classifcation_report(y_true, y_pred, mode='strict', verbose=True)
+    metrics = classification_report(y_true, y_pred, mode='strict', verbose=True)
     
     import json
     # Serializing json

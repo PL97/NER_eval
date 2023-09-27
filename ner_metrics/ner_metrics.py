@@ -4,7 +4,7 @@ from collections import defaultdict
 
 TNE = "this_tag_does_not_exists"
 
-def classifcation_report(tags_true: list, tags_pred: list, mode="lenient", scheme="IOB2", verbose=False) -> dict:
+def classification_report(tags_true: list, tags_pred: list, mode="lenient", scheme="IOB2", verbose=False) -> dict:
     """caculate lenient matching score, including F1-score, precision, and recall
 
     Args:
